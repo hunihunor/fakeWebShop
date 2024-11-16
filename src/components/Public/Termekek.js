@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Termek from './Termek'
-import { ApiContext } from '../contexts/ApiContext'
+import { ApiContext } from '../../contexts/ApiContext'
 
 function Termekek() {
 
@@ -8,15 +8,11 @@ function Termekek() {
 
   return (
     <div className='row'>
-        <Termek />
-        <Termek />
-        <Termek />
-        <Termek />
-        <Termek />
-        <Termek />
-        <Termek />
+        {tLista.map((termek)=>{
+            return <Termek termek={termek} key={termek.id} />
+        })}
     </div>
-  )
+  );
 }
 
 export default Termekek
